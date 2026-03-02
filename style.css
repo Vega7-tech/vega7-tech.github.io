@@ -29,15 +29,22 @@ header {
 }
 
 .main-logo {
-  width: 90%;          /* Uses most of the screen width on mobile */
-  max-width: 600px;    /* Prevents it from getting TOO big on PC */
-  height: auto;        /* Keeps the image proportions perfect */
+  display: block;
+  margin: 0 auto 30px auto;
+  width: 100%;             /* Use full width available */
+  max-width: 800px;        /* Much bigger for PC (was 600px) */
+  min-width: 300px;        /* Ensures it never gets "tiny" */
+  height: auto;            /* Keeps proportions perfect */
   object-fit: contain;
-  margin: 0 auto 20px auto; 
-  display: block;      /* Centers the image properly */
   filter: drop-shadow(var(--glow-blue)) drop-shadow(var(--glow-pink));
 }
 
+/* Special adjustment for very large PC screens */
+@media (min-width: 1200px) {
+  .main-logo {
+    max-width: 1000px;     /* Massive size for large monitors */
+  }
+}
 .subtitle {
   font-size: 1.3em;
   color: var(--text-muted);
