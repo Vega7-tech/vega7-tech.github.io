@@ -29,10 +29,12 @@ header {
 }
 
 .main-logo {
-  width: auto;
-  height: 160px;
+  width: 90%;          /* Uses most of the screen width on mobile */
+  max-width: 600px;    /* Prevents it from getting TOO big on PC */
+  height: auto;        /* Keeps the image proportions perfect */
   object-fit: contain;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto; 
+  display: block;      /* Centers the image properly */
   filter: drop-shadow(var(--glow-blue)) drop-shadow(var(--glow-pink));
 }
 
